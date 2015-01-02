@@ -13,7 +13,7 @@ feature "salesperson records a car manufacturer ", %q(
 
   it "specifies a manufacturer for his cars." do
 
-    visit :index
+    visit '/'
 
     click_on "Add Manufacturer"
     fill_in "Manufacturer", with: "Honda"

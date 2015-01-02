@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'manufacturer#index'
+  root 'manufacturers#index'
 
-  resources :manufacturer, only: [:index, :show, :create]
+  resources :manufacturers, only: [:index, :show, :create, :new]
 end
