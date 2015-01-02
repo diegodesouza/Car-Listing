@@ -16,7 +16,7 @@ class ManufacturersController < ApplicationController
 
     if @manufacturer.save
       flash[:notice] = "You have successfully created a new manufacturer"
-      redirect_to manufacturer_index_path(@manufacturer)
+      redirect_to root_path(@manufacturer)
     else
       flash[:alert] = "Please try again"
       render :new

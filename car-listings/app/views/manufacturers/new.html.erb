@@ -1,1 +1,7 @@
-<%= render "manufacturer_form" %>
+<div>
+  <%= @manufacturer.errors.full_messages if @manufacturer.errors.any? %>
+</div>
+
+<div>
+  <%= render "manufacturer_form" %>
+</div>

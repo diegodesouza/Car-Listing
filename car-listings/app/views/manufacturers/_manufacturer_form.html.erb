@@ -1,9 +1,11 @@
-<%= form_for @manufacturer do |f| %>
-<%= f.label :manufacturer %>:
-<%= f.text_field :manufacturer %><br />
+<div>
+  <%= form_for @manufacturer do |f| %>
+  <%= f.label :manufacturer %>:
+  <%= f.text_field :manufacturer %><br>
 
-<%= f.label :country %>:
-<%= f.text_field :country %><br />
+  <%= f.label :country %>:
+  <%= f.text_field :country %><br>
 
-<%= f.submit "Add Manufacturer"%>
-<% end %>
+  <%= f.submit "Add it"%>
+  <% end %>
+</div>
