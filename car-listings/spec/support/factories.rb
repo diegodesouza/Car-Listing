@@ -1,10 +1,15 @@
 FactoryGirl.define do
-  factory (:manufacturer) do
-    sequence :manufacturer do |n|
-      "#{n}Ford"
-    end
-    sequence :country do |n|
-      "#{n}Mexico"
-    end
+  factory :manufacturer do
+    name "Ford"
+    country "Mexico"
+  end
+
+  factory :car do
+    make "Fiat"
+    color "White"
+    year "1981"
+    mileage "80,000"
+    description "Mint condition"
+    country "Italy"
   end
 end

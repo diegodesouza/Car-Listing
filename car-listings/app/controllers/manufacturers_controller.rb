@@ -5,6 +5,7 @@ class ManufacturersController < ApplicationController
 
   def show
     @manufacturer = Manufacturer.find(params[:id])
+    @car = Car.new
   end
 
   def new
@@ -26,6 +27,6 @@ class ManufacturersController < ApplicationController
   private
 
   def manufacturer_params
-    params.require(:manufacturer).permit(:manufacturer, :country)
+    params.require(:manufacturer).permit(:name, :country)
   end
 end

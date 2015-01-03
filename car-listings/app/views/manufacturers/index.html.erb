@@ -1,8 +1,9 @@
-<h1>Manufacturer</h1>
+<h1>Home Manufacturer</h1>
+
 
 <div>
   <% @manufacturers.each do |manufacturer| %>
-    Manufacturer: <%= manufacturer.manufacturer %><br>
+    Manufacturer: <%= manufacturer.name %><br>
     Manufacturer Country: <%= manufacturer.country %>
-  <% end %>
+  <% end %><hr>
 </div>

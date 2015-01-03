@@ -1,0 +1,23 @@
+<div>
+  <%= form_for [@manufacturer, @car] do |f| %>
+  <%= f.label :make %>:
+  <%= f.text_field :make %><br>
+
+  <%= f.label :color %>:
+  <%= f.text_field :color %><br>
+
+  <%= f.label :year %>:
+  <%= f.text_field :year %><br>
+
+  <%= f.label :mileage %>:
+  <%= f.text_field :mileage %><br>
+
+  <%= f.label :description %>:
+  <%= f.text_field :description %><br>
+
+  <%= f.label :country %>:
+  <%= f.text_field :country %><br>
+
+  <%= f.submit "Add car", method: :post%>
+  <% end %>
+</div>

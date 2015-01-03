@@ -1,7 +1,9 @@
 <div>
   <%= @manufacturer.errors.full_messages if @manufacturer.errors.any? %>
 </div>
-
+<div>
+  <%= link_to "Home", root_path %>
+</div>
 <div>
   <%= render "manufacturer_form" %>
 </div>

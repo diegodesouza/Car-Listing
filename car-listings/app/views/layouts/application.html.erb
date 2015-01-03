@@ -6,11 +6,8 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<%= link_to "Add Car", new_manufacturer_car_path(manufacturer)%>
 
-  <%= link_to "Add Manufacturer", new_manufacturer_path %>
-
+<%= link_to "Add Manufacturer", new_manufacturer_path %>
 <%= yield %>
-
-</body>
 </html>
