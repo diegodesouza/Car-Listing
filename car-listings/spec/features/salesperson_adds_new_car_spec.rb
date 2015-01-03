@@ -21,20 +21,26 @@ feature "salesperson records a car manufacturer ", %q(
 
       car = create :car
 
-      visit root_path
-      save_and_open_page
-      click_on "Add Car"
+      visit car_path
 
-      fill_in "make", with: car.make
-      fill_in "color", with: car.color
-      fill_in "year", with: car.year
-      fill_in "mileage", with: car.mileage
-      fill_in "description", with: car.description
-      fill_in "country", with: car.country
+      click_on "Add Car"
+      save_and_open_page
+
+      fill_in "Make", with: car.make
+      fill_in "Color", with: car.color
+      fill_in "Year", with: car.year
+      fill_in "Mileage", with: car.mileage
+      fill_in "Description", with: car.description
+      fill_in "Country", with: car.country
 
       click_button "Add car"
 
-      expect(page).to have_content car
+      expect(page).to have_content car.make
+      expect(page).to have_content car.color
+      expect(page).to have_content car.year
+      expect(page).to have_content car.mileage
+      expect(page).to have_content car.description
+      expect(page).to have_content car.country
       expect(page).to have_content "You have successfully created a car"
     end
   end

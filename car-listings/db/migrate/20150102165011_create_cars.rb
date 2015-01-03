@@ -7,10 +7,9 @@ class CreateCars < ActiveRecord::Migration
       t.string :mileage, null: false
       t.text :description
       t.string :country, null: false
-      t.integer :manufacturer_id, null: false
+      t.integer :manufacturer_id
 
       t.timestamps null: false
     end
-    add_index :cars, :manufacturer_id
   end
 end

@@ -1,15 +1,15 @@
 <h1>Cars</h1>
 
-<%= link_to "Add Car", new_manufacturer_car_path %>
+<%= link_to "Add Car", new_car_path %>
 
 <div>
   <% @cars.each do |car| %><hr>
-Make: <%= link_to car.make, manufacturer_cars_path(car) %><br>
-Color: <%= car.color %><br>
-Year: <%= car.year %><br>
-Mileage: <%= car.mileage %><br>
-Description: <%= car.description %><br>
-Country: <%= car.country %><br>
+    Make: <%= link_to car.make, car_path(car) %><br>
+    Color: <%= car.color %><br>
+    Year: <%= car.year %><br>
+    Mileage: <%= car.mileage %><br>
+    Description: <%= car.description %><br>
+    Country: <%= car.country %><br>
   <% end %><br><hr>
 
 </div>

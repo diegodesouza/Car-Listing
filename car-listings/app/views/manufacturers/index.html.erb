@@ -4,6 +4,5 @@
   <% @manufacturers.each do |manufacturer| %><hr>
     Manufacturer: <%= manufacturer.name %><br>
     Manufacturer Country: <%= manufacturer.country %><br>
-    <%= link_to "Add Car", new_manufacturer_car_path(manufacturer)%><br>
   <% end %><hr>
 </div>

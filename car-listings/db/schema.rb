@@ -23,12 +23,10 @@ ActiveRecord::Schema.define(version: 20150102165011) do
     t.string   "mileage",         null: false
     t.text     "description"
     t.string   "country",         null: false
-    t.integer  "manufacturer_id", null: false
+    t.integer  "manufacturer_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
-
-  add_index "cars", ["manufacturer_id"], name: "index_cars_on_manufacturer_id", using: :btree
 
   create_table "manufacturers", force: :cascade do |t|
     t.string   "name",       null: false
