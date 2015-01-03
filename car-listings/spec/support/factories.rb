@@ -11,5 +11,6 @@ FactoryGirl.define do
     mileage "80,000"
     description "Mint condition"
     country "Italy"
+    manufacturer
   end
 end

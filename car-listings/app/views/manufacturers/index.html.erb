@@ -1,9 +1,9 @@
 <h1>Home Manufacturer</h1>
 
-
 <div>
-  <% @manufacturers.each do |manufacturer| %>
+  <% @manufacturers.each do |manufacturer| %><hr>
     Manufacturer: <%= manufacturer.name %><br>
-    Manufacturer Country: <%= manufacturer.country %>
+    Manufacturer Country: <%= manufacturer.country %><br>
+    <%= link_to "Add Car", new_manufacturer_car_path(manufacturer)%><br>
   <% end %><hr>
 </div>

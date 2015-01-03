@@ -18,18 +18,23 @@ feature "salesperson records a car manufacturer ", %q(
   ) do
 
     it "creates a new car record" do
-      # car = create :car
 
-      visit new_manufacturer_car_path
+      car = create :car
 
-      fill_in "make", with: "Ford"
-      fill_in "color", with: "Black"#car.color
-      fill_in "year", with: "1998"#car.year
-      fill_in "mileage", with: "80,000"#car.mileage
-      fill_in "description", with: "Some stuff"#car.description
-      fill_in "country", with: "US"#car.country
+      visit root_path
+      save_and_open_page
+      click_on "Add Car"
 
-      # expect(page).to have_content car
+      fill_in "make", with: car.make
+      fill_in "color", with: car.color
+      fill_in "year", with: car.year
+      fill_in "mileage", with: car.mileage
+      fill_in "description", with: car.description
+      fill_in "country", with: car.country
 
+      click_button "Add car"
+
+      expect(page).to have_content car
+      expect(page).to have_content "You have successfully created a car"
     end
   end
