@@ -26,7 +26,7 @@ feature "salesperson records a car manufacturer ", %q(
       click_on "Add Car"
       save_and_open_page
 
-      fill_in "Make", with: car.make
+      fill_in "Manufacturer", with: car.manufacturer
       fill_in "Color", with: car.color
       fill_in "Year", with: car.year
       fill_in "Mileage", with: car.mileage
@@ -35,7 +35,7 @@ feature "salesperson records a car manufacturer ", %q(
 
       click_button "Add car"
 
-      expect(page).to have_content car.make
+      expect(page).to have_content car.manufacturer
       expect(page).to have_content car.color
       expect(page).to have_content car.year
       expect(page).to have_content car.mileage

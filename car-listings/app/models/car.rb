@@ -1,9 +1,9 @@
 class Car < ActiveRecord::Base
-  belongs_to :manufacturer
+  belongs_to :manufacturer,
+    inverse_of: :cars
 
-  validates :make, presence: true
-  validates :color, presence: true
-  validates :year, presence: true
-  validates :mileage, presence: true
-  validates :country, presence: true
+  validates_presence_of :manufacturer
+  validates_presence_of :color
+  validates_presence_of :year
+  validates_presence_of :mileage
 end

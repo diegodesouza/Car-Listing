@@ -11,12 +11,12 @@
         <div class="media">
           <div class="media-body">
             <ul class="list-group">
-              <li class="list-group-item"><h4 class="media-heading">Make: <%= link_to car.make, manufacturer_path(car) %></h4></li>
+              <li class="list-group-item"><h4 class="media-heading">Manufacturer: <%= car.manufacturer.name %></h4></li>
               <li class="list-group-item"><h4 class="media-heading">Color: <%= car.color %></h4></li>
               <li class="list-group-item"><h4 class="media-heading">Year: <%= car.year %></h4></li>
               <li class="list-group-item"><h4 class="media-heading">Mileage: <%= car.mileage %></h4></li>
               <li class="list-group-item"><h4 class="media-heading">Description: <%= car.description %></h4></li>
-              <li class="list-group-item"><h4 class="media-heading">Country: <%= car.country %></h4></li>
+
             </div>
             </ul>
           </div>

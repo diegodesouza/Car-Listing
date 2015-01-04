@@ -2,8 +2,14 @@
 <div class="col-md-6" id="middle">
   <div class="form-group">
       <%= form_for [@manufacturer, @car] do |f| %>
-      <label class="control-label"><%= f.label :make %>:
-      <div class="form-control"><%= f.text_field :make, placeholder: "Make"%></div>
+      <ul>
+        <% @car.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+      <label class="control-label"><%= f.label :manufacturer_id %>:
+      <div class="form-control"><%= f.collection_select :manufacturer_id, Manufacturer.all, :id, :name,
+      include_blank: true%></div>
 
       <label class="control-label"><%= f.label :color %>:
       <div class="form-control"><%= f.text_field :color, placeholder: "Color" %></div>
