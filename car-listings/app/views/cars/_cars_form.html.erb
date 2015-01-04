@@ -1,23 +1,23 @@
-<div>
-  <%= form_for [@manufacturer, @car] do |f| %>
-  <%= f.label :make %>:
-  <%= f.text_field :make %><br>
+<div class="col-md-4" id="left-bar"></div>
+<div class="col-md-6" id="middle">
+  <div class="form-group">
+      <%= form_for [@manufacturer, @car] do |f| %>
+      <label class="control-label"><%= f.label :make %>:
+      <div class="form-control"><%= f.text_field :make, placeholder: "Make"%></div>
 
-  <%= f.label :color %>:
-  <%= f.text_field :color %><br>
+      <label class="control-label"><%= f.label :color %>:
+      <div class="form-control"><%= f.text_field :color, placeholder: "Color" %></div>
 
-  <%= f.label :year %>:
-  <%= f.text_field :year %><br>
+      <label class="control-label"><%= f.label :year %>:
+      <div class="form-control"><%= f.text_field :year, placeholder: "Year" %></div>
 
-  <%= f.label :mileage %>:
-  <%= f.text_field :mileage %><br>
+      <label class="control-label"><%= f.label :mileage %>:
+      <div class="form-control"><%= f.text_field :mileage, placeholder: "Mileage" %></div>
 
-  <%= f.label :description %>:
-  <%= f.text_field :description %><br>
+      <label class="control-label"><%= f.label :description %>:
+      <div class="form-control"><%= f.text_field :description, placeholder: "Description"%></div>
 
-  <%= f.label :country %>:
-  <%= f.text_field :country %><br>
-
-  <%= f.submit "Add car", method: :post%>
-  <% end %>
+      <%= f.submit "Save Car", method: :post%>
+      <% end %>
+    </div>
 </div>

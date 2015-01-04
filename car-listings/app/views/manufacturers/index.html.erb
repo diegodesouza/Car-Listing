@@ -1,8 +1,22 @@
-<h1>Home Manufacturer</h1>
+<div class="page-header">
+  <h1>Home Manufacturer</h1>
 
-<div>
-  <% @manufacturers.each do |manufacturer| %><hr>
-    Manufacturer: <%= manufacturer.name %><br>
-    Manufacturer Country: <%= manufacturer.country %><br>
-  <% end %><hr>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" id="left-bar">  </div>
+
+    <div class="col-md-6" id="middle">
+      <div>
+        <% @manufacturers.each do |manufacturer| %>
+        <div class="media">
+          <div class="media-body">
+            <li class="list-group-item"><h4 class="media-heading">Name: <%= link_to manufacturer.name, manufacturer_path(manufacturer) %></h4></li>
+            <li class="list-group-item"><h4 class="media-heading">Country: <%= manufacturer.country %></h4></li>
+          </div>
+        </div>
+          <hr/>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

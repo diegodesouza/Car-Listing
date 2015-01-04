@@ -1,13 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/index.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+  <!-- Latest compiled and minified JavaScript -->
   <title>CarListings</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-  <%= link_to "Add Car", new_car_path %><br>
-  <%= link_to "Add Manufacturer", new_manufacturer_path %>
+<body>
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li><a href="/manufacturers">Manufacturer</a></li>
+      <li><a href="/manufacturers/new">New Manufacturer</a></li>
+      <li><a href="/cars">Cars</a></li>
+      <li><a href="/cars/new">New Car</a></li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+
+
   <%= yield %>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</body>
 
 </html>

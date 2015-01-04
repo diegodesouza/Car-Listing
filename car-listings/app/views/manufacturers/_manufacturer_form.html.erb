@@ -1,11 +1,14 @@
-<div>
-  <%= form_for @manufacturer do |f| %>
-  <%= f.label :name %>:
-  <%= f.text_field :name %><br>
+<div class="col-md-4" id="left-bar"></div>
+<div class="col-md-6" id="middle">
+  <div class="form-group">
+    <%= form_for @manufacturer do |f| %>
+    <label class="control-label"><%= f.label :name %>:
+      <div class="form-control"><%= f.text_field :name, placeholder: "Name" %></div>
 
-  <%= f.label :country %>:
-  <%= f.text_field :country %><br>
+    <label class="control-label"><%= f.label :country %>:
+      <div class="form-control"><%= f.text_field :country, placeholder: "Country" %></div>
 
-  <%= f.submit "Add it", method: :post%>
-  <% end %>
+    <%= f.submit "Save Manufacturer", method: :post%>
+    <% end %>
+  </div>
 </div>

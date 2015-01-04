@@ -19,7 +19,7 @@ feature "salesperson records a car manufacturer ", %q(
     click_link "Add Manufacturer"
     fill_in "Name", with: manufacturer.name
     fill_in "Country", with: manufacturer.country
-    click_on "Add it"
+    click_on "Save Manufacturer"
 
     visit root_path
 
@@ -37,7 +37,7 @@ feature "salesperson records a car manufacturer ", %q(
     click_link "Add Manufacturer"
     fill_in "Name", with: manufacturer.name
     fill_in "Country", with: " "
-    click_on "Add it"
+    click_on "Save Manufacturer"
 
     expect(page).to have_content "Country can't be blank"
   end

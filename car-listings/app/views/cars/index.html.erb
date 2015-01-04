@@ -1,15 +1,28 @@
 <h1>Cars</h1>
 
-<%= link_to "Add Car", new_car_path %>
 
-<div>
-  <% @cars.each do |car| %><hr>
-    Make: <%= link_to car.make, car_path(car) %><br>
-    Color: <%= car.color %><br>
-    Year: <%= car.year %><br>
-    Mileage: <%= car.mileage %><br>
-    Description: <%= car.description %><br>
-    Country: <%= car.country %><br>
-  <% end %><br><hr>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" id="left-bar">  </div>
 
+    <div class="col-md-6" id="middle">
+      <div>
+        <% @cars.each do |car| %>
+        <div class="media">
+          <div class="media-body">
+            <ul class="list-group">
+              <li class="list-group-item"><h4 class="media-heading">Make: <%= link_to car.make, manufacturer_path(car) %></h4></li>
+              <li class="list-group-item"><h4 class="media-heading">Color: <%= car.color %></h4></li>
+              <li class="list-group-item"><h4 class="media-heading">Year: <%= car.year %></h4></li>
+              <li class="list-group-item"><h4 class="media-heading">Mileage: <%= car.mileage %></h4></li>
+              <li class="list-group-item"><h4 class="media-heading">Description: <%= car.description %></h4></li>
+              <li class="list-group-item"><h4 class="media-heading">Country: <%= car.country %></h4></li>
+            </div>
+            </ul>
+          </div>
+          <hr/>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
