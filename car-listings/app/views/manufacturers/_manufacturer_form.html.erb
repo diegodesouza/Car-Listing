@@ -2,14 +2,25 @@
 <div class="col-md-6" id="middle">
   <div class="form-group">
     <%= form_for @manufacturer do |f| %>
-    <label class="control-label"><%= f.label :name %>:
+    <% if @manufacturer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@manufacturer.errors.count, "error") %> prohibited this from being saved:</h2>
+
+      <ul>
+        <% @manufacturer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+    <label class="control-label"><%= f.label :name %>
 
       <div class="form-control"><%= f.select :name, Manufacturer.names, include_blank: true %></div>
 
-    <label class="control-label"><%= f.label :country %>:
+    <label class="control-label"><%= f.label :country %>
       <div class="form-control"><%= f.text_field :country, placeholder: "Country" %></div>
 
-    <%= f.submit "Save Manufacturer", method: :post%>
+    <%= f.submit "Save Manufacturer", method: :post, :class => "btn btn-primary"%>
     <% end %>
   </div>
 </div>

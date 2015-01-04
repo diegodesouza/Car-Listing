@@ -4,6 +4,7 @@ feature "salesperson records a car manufacturer ", %q(
   As a car salesperson
   I want to record a car manufacturer
   So that I can keep track of the types of cars found in the lot
+  
   Acceptance Criteria
   [X] I must specify a manufacturer name and country.
   [X] If I do not specify the required information, I am presented with errors.

@@ -1,24 +1,36 @@
 <div class="col-md-4" id="left-bar"></div>
 <div class="col-md-6" id="middle">
-  <div class="form-group">    
+  <div class="form-group">
     <%= form_for [@manufacturer, @car] do |f| %>
-      <label class="control-label"><%= f.label :manufacturer_id %>:
+    <% if @car.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@car.errors.count, "error") %> prohibited this from being saved:</h2>
+
+      <ul>
+        <% @car.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+      <label class="control-label"><%= f.label :manufacturer_id %>
       <div class="form-control"><%= f.collection_select :manufacturer_id, Manufacturer.all, :id, :name,
       include_blank: true%></div>
 
-      <label class="control-label"><%= f.label :color %>:
+      <label class="control-label"><%= f.label :color %>
       <div class="form-control"><%= f.text_field :color, placeholder: "Color" %></div>
 
-      <label class="control-label"><%= f.label :year %>:
+      <label class="control-label"><%= f.label :year %>
       <div class="form-control"><%= f.date_select :year, :order => [:year], :start_year => 1920, :end_year => Time.now.year %></div>
 
-      <label class="control-label"><%= f.label :mileage %>:
+      <label class="control-label"><%= f.label :mileage %>
       <div class="form-control"><%= f.text_field :mileage, placeholder: "Mileage" %></div>
 
-      <label class="control-label"><%= f.label :description %>:
+      <label class="control-label"><%= f.label :description %>
       <div class="form-control"><%= f.text_field :description, placeholder: "Description"%></div>
 
-      <%= f.submit "Save Car", method: :post%>
+      <%= f.submit "Save Car", method: :post, :class => "btn btn-primary"%>
       <% end %>
     </div>
 </div>

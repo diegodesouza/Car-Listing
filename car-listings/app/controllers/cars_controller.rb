@@ -18,6 +18,7 @@ class CarsController < ApplicationController
       flash[:notice] = "You have successfully created a car"
       redirect_to cars_path
     else
+      flash[:alert] = "You have not saved your car"
       render 'new'
     end
   end

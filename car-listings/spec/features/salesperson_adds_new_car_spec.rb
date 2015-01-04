@@ -17,7 +17,7 @@ feature "salesperson records a car manufacturer ", %q(
   [X] Upon successfully creating a car, I am redirected back to the index of cars.
   ) do
 
-    it "creates a new car record" do
+    it "successfully creates a new car record" do
       Manufacturer.create!(name: "Acura", country: "Brazil")
 
       visit "/"
@@ -39,4 +39,23 @@ feature "salesperson records a car manufacturer ", %q(
       expect(page).to have_content "Excellent Condition"
       expect(page).to have_content "You have successfully created a car"
     end
+
+    it "unsuccessfully creates a new car" do
+    Manufacturer.create!(name: "Acura", country: "Brazil")
+
+    visit "/"
+
+    click_on "New Car"
+
+    select "Acura", from: "Manufacturer"
+    fill_in "Color", with: ""
+    select "2000"
+    fill_in "Mileage", with: "100_000"
+    fill_in "Description", with: "Excellent Condition"
+    save_and_open_page
+
+    click_button "Save Car"
+
+    expect(page).to have_content "Color can't be blank"
   end
+end

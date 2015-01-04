@@ -18,7 +18,7 @@ class ManufacturersController < ApplicationController
       flash[:notice] = "You have successfully created a new manufacturer"
       redirect_to root_path(@manufacturer)
     else
-      flash[:alert] = "Please try again"
+      flash[:alert] = "Your manufacturer has not been saved"
       render :new
     end
   end
