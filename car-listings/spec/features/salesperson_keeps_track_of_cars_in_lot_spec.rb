@@ -16,7 +16,7 @@ feature "salesperson records a car manufacturer ", %q(
 
     visit root_path
 
-    click_link "Add Manufacturer"
+    click_link "New Manufacturer"
     fill_in "Name", with: manufacturer.name
     fill_in "Country", with: manufacturer.country
     click_on "Save Manufacturer"
@@ -34,7 +34,7 @@ feature "salesperson records a car manufacturer ", %q(
 
     visit root_path
 
-    click_link "Add Manufacturer"
+    click_link "New Manufacturer"
     fill_in "Name", with: manufacturer.name
     fill_in "Country", with: " "
     click_on "Save Manufacturer"
